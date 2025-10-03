@@ -1,0 +1,17 @@
+[package]
+name = "secure_wipe_engine"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]  # For Python bindings via PyO3
+
+[[bin]]
+name = "wipe_cli"
+path = "src/main.rs"  # Standalone CLI for bootable ISO
+
+[dependencies]
+sysinfo = "0.29"  # Device detection
+rand = "0.8"      # Random data for wipes
+pyo3 = { version = "0.20", features = ["extension-module"] }  # Python bindings
+anyhow = "1.0"    # Error handling

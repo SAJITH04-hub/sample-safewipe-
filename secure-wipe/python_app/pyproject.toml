@@ -1,0 +1,32 @@
+#[cfg(test)]
+mod tests {
+    use super::lib;  // Assuming lib.rs is in scope
+
+    #[test]
+    fn test_detect_devices() {
+        let devices = lib::detect_devices().unwrap();
+        assert!(!devices.is_empty(), "Should detect at least one device");
+    }
+
+    #[test]
+    fn test_wipe_mock() {
+        // Mock: Create temp file as "device"
+        use std::fs::OpenOptions;
+        use std::io::Write;
+        let mock_path = "test_mock_device.tmp";
+        let mut file = OpenOptions::new().write(true).create(true).open(mock_path).unwrap();
+        file.write_all(b"test data").unwrap();
+
+        // Wipe with 1 pass
+        lib::wipe_device(mock_path.to_string(), 1).unwrap();
+
+        // Verify: File should be zeroed (simplified)
+        use std::io::Read;
+        let mut buf = Vec::new();
+        let mut f = std::fs::File::open(mock_path).unwrap();
+        f.read_to_end(&mut buf).unwrap();
+        assert!(buf.iter().all(|&b| b == 0), "Mock wipe should zero data");
+
+        std::fs::remove_file(mock_path).unwrap();
+    }
+}

@@ -1,0 +1,16 @@
+app:
+  wipe_passes: 3
+  default_method: "DoD 5220.22-M 3-Pass"
+  theme: "light"
+
+api:
+  host: "0.0.0.0"
+  port: 5000
+
+keys:
+  private_path: "../../keys/private.pem"
+  public_path: "../../keys/public.pem"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(levelname)s - %(message)s"

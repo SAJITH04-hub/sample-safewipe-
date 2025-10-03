@@ -1,0 +1,7 @@
+# Placeholder for isolinux.bin (binary bootloader file)
+# This is NOT code – it's a binary. Create an empty file or text placeholder here.
+# Real file: Download from https://www.gnu.org/software/grub/ or copy from system:
+# Linux: sudo cp /usr/lib/grub/i386-pc/isolinux.bin .
+# Windows/macOS: Use WSL or download GRUB ISO and extract.
+# For now, create the file with: touch isolinux.bin (or echo "Placeholder" > isolinux.bin)
+# Size should be ~20-50KB; replace before building ISO.

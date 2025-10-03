@@ -1,0 +1,7 @@
+{
+  "domain": "your-domain-dev.us.auth0.com",
+  "client_id": "your-client-id-placeholder",
+  "client_secret": "your-client-secret-placeholder",
+  "redirect_uri": "http://localhost:3000/callback",
+  "scope": ["openid", "profile", "email"]
+}

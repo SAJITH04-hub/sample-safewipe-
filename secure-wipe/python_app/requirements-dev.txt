@@ -1,0 +1,5 @@
+pytest==7.4.0
+pytest-qt==4.4.0
+black==23.10.0
+maturin==1.5.1  # For Rust bindings
+pyinstaller==6.5.0  # For executables

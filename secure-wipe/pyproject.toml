@@ -1,0 +1,19 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0", "setuptools>=45"]
+build-backend = "maturin"
+
+[tool.maturin]
+module-name = "secure_wipe_engine"
+compatibility = "python3"
+
+[project]
+name = "secure-wipe"
+version = "0.1.0"
+description = "Secure data wiping application"
+dependencies = []  # Managed via requirements.txt
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --tb=short"
+testpaths = ["python_app/tests"]
+python_files = "test_*.py"

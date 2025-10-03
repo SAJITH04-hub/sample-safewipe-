@@ -8,12 +8,10 @@ Run: python main.py
 import sys
 from src.auth import authenticate, test_auth  # Use test_auth for dev
 from src.gui import SecureWipeApp
-from src.utils import load_config, log_message
+from src.utils import log_message
 from PyQt6.QtWidgets import QApplication
-import os
 
 def main():
-    config = load_config()
     log_message('INFO', 'Starting Secure Wipe Application')
 
     # Authentication (OAuth/OpenID)
